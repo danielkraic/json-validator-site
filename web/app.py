@@ -29,4 +29,5 @@ def handle_req():
     return render_template('main.html', page_title=page_title, base_url=base_url)
 
 if __name__ == "__main__":
-    app.run(port=8080)
+    app.run(debug=False,host='0.0.0.0',port=5000)
+
