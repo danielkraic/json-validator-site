@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  </head>
+  <body>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1><a href="{{ base_url }}">JSON validator</a> <small>version 0.1</small></h1>
+      </div>
+
+      <form method="post">
+        <div class="form-group">
+         <label for="json string">Json:</label>
+         <textarea required name="jsondata" class="form-control" rows="10">{{ json_string }}</textarea>
+         <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+
+      {% if error %}
+        <div class="alert alert-danger" role="alert">{{ error }}</div>
+      {% endif %}
+    </div> <!-- /container -->
+
+    {% if json_pretty %}
+    <div class="container">
+      <div class="form-group">
+        <textarea readonly  class="form-control" rows="10">{{ json_pretty }}</textarea>
+      </div> <!-- /form-group -->
+    </div> <!-- /container -->
+    {% endif %}
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  </body>
+</html>
