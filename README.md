@@ -7,7 +7,7 @@ simple web for validating JSONs
 
 ```bash
 # start service
-docker-compose u -d
+docker-compose up -d
 # open url http://0.0.0.0:5000
 
 # stop service
