@@ -1,5 +1,7 @@
 # json-validator-site
 
+[![Build Status](https://travis-ci.org/danielkraic/json-validator-site.svg?branch=master)](https://travis-ci.org/danielkraic/json-validator-site)
+
 simple web for validating JSONs
 
 ## run
