@@ -12,6 +12,6 @@ install:
     - pip install -r web/requirements.txt
     - pip install python-coveralls
 script:
-    - nosetests --with-coverage --cover-package=pysal
+    - nosetests --with-coverage --cover-package=web
 after_success:  
     - coveralls 
