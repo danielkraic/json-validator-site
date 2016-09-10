@@ -1,6 +1,7 @@
 # json-validator-site
 
 [![Build Status](https://travis-ci.org/danielkraic/json-validator-site.svg?branch=master)](https://travis-ci.org/danielkraic/json-validator-site)
+[![Coverage Status](https://coveralls.io/repos/github/danielkraic/json-validator-site/badge.svg?branch=code-coverage)](https://coveralls.io/github/danielkraic/json-validator-site?branch=code-coverage)
 
 simple web for validating JSONs
 
