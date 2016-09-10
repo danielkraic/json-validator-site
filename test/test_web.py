@@ -25,22 +25,21 @@ def test_parse_failed_typo():
 def test_parse_root():
     app_tesing = web.app.test_client()
     res = app_tesing.get('/')
-    assert not "Error" in res.data 
-    assert not "JSON is valid" in res.data
+    assert not "Error" in res.get_data(as_text=True)
+    assert not "JSON is valid" in res.get_data(as_text=True)
 
 def test_parse_root_post_valid_object():
     app_tesing = web.app.test_client()
     res = app_tesing.post('/', data=dict(
         jsondata='{}'
     ))
-    assert not "Error" in res.data 
-    assert "JSON is valid" in res.data
+    assert not "Error" in res.get_data(as_text=True)
+    assert "JSON is valid" in res.get_data(as_text=True)
 
 def test_parse_root_post_valid_array():
     app_tesing = web.app.test_client()
     res = app_tesing.post('/', data=dict(
         jsondata='[]'
     ))
-    assert not "Error" in res.data 
-    assert "JSON is valid" in res.data
-
+    assert not "Error" in res.get_data(as_text=True)
+    assert "JSON is valid" in res.get_data(as_text=True)
