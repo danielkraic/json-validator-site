@@ -28,6 +28,6 @@ docker-compose kill
 ### run standalone app locally
 
 ```bash
-./web/web.py
+python web/web.py
 # open url http://0.0.0.0:5000
 ```
