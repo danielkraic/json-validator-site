@@ -7,7 +7,7 @@ from flask import Flask, render_template, request
 app = Flask(__name__)
 
 page_title = "JSON Validator"
-page_version = "0.2"
+page_version = "0.3"
 base_url = "/"
 main_html = "main.html"
 
