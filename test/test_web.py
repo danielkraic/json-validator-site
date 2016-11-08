@@ -43,3 +43,17 @@ def test_parse_root_post_valid_array():
     ))
     assert not "Error" in res.get_data(as_text=True)
     assert "JSON is valid" in res.get_data(as_text=True)
+
+def test_clear_rsyslog_escapes():
+    eq_(web.clear_rsyslog_escapes(''), '')
+    eq_(web.clear_rsyslog_escapes('#'), '#')
+    eq_(web.clear_rsyslog_escapes('0#'), '0#')
+
+    eq_(web.clear_rsyslog_escapes('#0'), '')
+    eq_(web.clear_rsyslog_escapes('#01'), '')
+    eq_(web.clear_rsyslog_escapes('#0000'), '')
+
+    eq_(web.clear_rsyslog_escapes('q#0q'), 'qq')
+    eq_(web.clear_rsyslog_escapes('q#000q'), 'qq')
+
+    eq_(web.clear_rsyslog_escapes('#012q#000q#0122'), 'qq')
