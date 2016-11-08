@@ -1,15 +1,19 @@
-import sys
 import json
+import re
+import sys
 from flask import Flask, render_template, request
 
 
 app = Flask(__name__)
 
 page_title = "JSON Validator"
-page_version = "0.1"
+page_version = "0.2"
 base_url = "/"
 main_html = "main.html"
 
+
+def clear_rsyslog_escapes(data):
+    return re.sub(r'#\d+', '', data)
 
 def parse_json(json_string):
     parsed = json.loads(json_string)
@@ -30,7 +34,7 @@ def handle_req():
     if request.method == 'POST':
         try:
             json_string = request.form['jsondata']
-            json_pretty = parse_json(json_string=json_string)
+            json_pretty = parse_json(json_string=clear_rsyslog_escapes(json_string))
             return get_page(json_string=json_string, json_pretty=json_pretty)
 
         except ValueError as e:

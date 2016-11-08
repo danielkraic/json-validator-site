@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>{{ title }}</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/default.min.css">
   </head>
   <body>
 
@@ -39,14 +40,14 @@
 
     {% if json_pretty %}
     <div class="container">
-      <div class="form-group">
-        <textarea readonly  class="form-control" rows="10">{{ json_pretty }}</textarea>
-      </div> <!-- /form-group -->
+      <pre><code class="json">{{ json_pretty }}</code></pre>
     </div> <!-- /container -->
     {% endif %}
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
 
   </body>
 </html>
